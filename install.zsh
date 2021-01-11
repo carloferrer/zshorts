@@ -1,21 +1,21 @@
 # Prepend source to .zshrc
 REPO_REMOTE="https://github.com/carloferrer/zhorts"
-REPO_LOCAL=$PWD/index.zsh
-SRC_STR="source ${REPO_LOCAL}"
+REPO_LOCAL_INDEX=$PWD/install.zsh
+SRC_STR="source ${REPO_LOCAL_INDEX}"
 ZSH=~/.zshrc
 
 # Print empty line for aesthetics
 echo ""
 
-# Check if index.zsh exists at current path
-if [ ! -f ./index.zsh ]
+# Check if install.zsh exists at current path
+if [ ! -f ./install.zsh ]
 then
-    echo "Couldn't find index.zsh at current path.\nNavigate to where the zhorts repo is cloned before installing!"
+    echo "Couldn't find an install.zsh file at current path.\nNavigate to where the zhorts repo is cloned before installing!"
 
-# Check if index.zsh at current path is correct
-elif ! grep -q $REPO_REMOTE $REPO_LOCAL
+# Check if install.zsh at current path is correct
+elif ! grep -q $REPO_REMOTE $REPO_LOCAL_INDEX
 then
-    echo "Found an index.zsh file, but not the right one.\nNavigate to where the zhorts repo is cloned before installing!"
+    echo "Found an install.zsh file, but not the right one.\nNavigate to where the zhorts repo is cloned before installing!"
 
 # Check if zhorts is already installed
 elif grep -q $SRC_STR $ZSH
@@ -31,7 +31,7 @@ else
     # Apply zhorts aliases etc.
     for zhort in $PWD/*.zsh
     do
-        if [ "${zhort}" != "${PWD}/index.zsh" ]
+        if [ "${zhort}" != "${PWD}/install.zsh" ]
         then
             source $zhort
         fi
