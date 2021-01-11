@@ -34,6 +34,3 @@ else
 
     echo "Zhorts installed!"
 fi
-
-# Add alias to reload ~/.zshrc config
-alias sz="source ~/.zshrc"
