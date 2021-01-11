@@ -1,12 +1,13 @@
 # Prepend source to .zshrc
 ZSH=~/.zshrc
 SRCPATH="source ${PWD}/index.zsh"
+REPO="https://github.com/carloferrer/zhorts"
 
 if grep -q $SRCPATH $ZSH
 then
-    echo "Source path to zhorts already exists!"
+    echo "Source path to zhorts exists!"
 else
-    echo -e "$SRCPATH\n\n$(cat $ZSH)" > $ZSH
+    echo -e "# $REPO\n$SRCPATH\n\n$(cat $ZSH)" > $ZSH
     echo "Source path to zhorts added!"
 fi
 
