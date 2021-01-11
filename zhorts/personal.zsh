@@ -1,6 +1,8 @@
 # Requires oh-my-zsh
 alias a='alias | grep'
+alias gg='git grep'
+alias ggf='git grep --files-with-matches'
 
 # Python stuff
-alias seba='source env/bin/activate'
 alias pm='python manage.py'
+alias seba='source env/bin/activate'
