@@ -1,4 +1,4 @@
-# zhorts 🩳
+# zshorts 🩳
 Aliases that help me do stuff.
 
 ### Installation
