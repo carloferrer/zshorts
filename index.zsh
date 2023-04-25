@@ -1,8 +1,5 @@
 # Path to this clone added as part of installation
-REPO_LOCAL_PATH="/Users/cferrer/workspace/zshorts"
-
-# Path to this clone added as part of installation
-REPO_LOCAL_PATH="/Users/cferrer/workspace/zshorts"
+REPO_LOCAL_PATH="/Users/cferrer/code/zshorts"
 
 # REPO_LOCAL_PATH constant defined as part of installation
 source $REPO_LOCAL_PATH/constants.zsh
