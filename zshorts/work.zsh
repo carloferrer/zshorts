@@ -7,4 +7,4 @@ alias y="yarn"
 alias ys="yarn start"
 alias yt="yarn test"
 
-alias c="cd ~/code"
+alias c="cd ~/Code"

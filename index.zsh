@@ -1,5 +1,5 @@
 # Path to this clone added as part of installation
-REPO_LOCAL_PATH="/Users/carlo/code/zshorts"
+REPO_LOCAL_PATH=$HOME/Config/zshorts
 
 # REPO_LOCAL_PATH constant defined as part of installation
 source $REPO_LOCAL_PATH/constants.zsh
