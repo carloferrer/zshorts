@@ -1,6 +1,7 @@
 alias a='alias | grep'
 
 # Rails stuff
+alias bi='bundle install'
 alias be='bundle exec'
 alias bers='bundle exec rails s'
 alias rspec='bundle exec rspec'
