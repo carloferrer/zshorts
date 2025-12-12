@@ -1,9 +1,8 @@
-DEFINE_REPO_LOCAL_PATH="REPO_LOCAL_PATH=\"${PWD}\""
-
+# Expects SCRIPT_DIR to be set by the sourcing script
 REPO_REMOTE="https://github.com/carloferrer/zshorts"
 
-REPO_LOCAL_INDEX=$PWD/index.zsh
-REPO_LOCAL_INSTALL=$PWD/install.zsh
+REPO_LOCAL_INDEX=${SCRIPT_DIR}/index.zsh
+REPO_LOCAL_INSTALL=${SCRIPT_DIR}/install.zsh
 
 SRC_LOCAL_INDEX="source ${REPO_LOCAL_INDEX}"
 

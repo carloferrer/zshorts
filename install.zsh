@@ -1,21 +1,24 @@
 # https://github.com/carloferrer/zshorts
 
-if [[ -f "${0:A:h}/constants.zsh" ]]; then
-  source "${0:A:h}/constants.zsh"
+# Set script directory for use in constants.zsh
+SCRIPT_DIR="${0:A:h}"
+
+if [[ -f "${SCRIPT_DIR}/constants.zsh" ]]; then
+  source "${SCRIPT_DIR}/constants.zsh"
 fi
 
 # Print empty line for aesthetics
 echo ""
 
-# Check if install.zsh exists at current path
-if [ ! -f ./install.zsh ]
+# Check if install.zsh exists at script path
+if [ ! -f "${SCRIPT_DIR}/install.zsh" ]
 then
-    echo "Couldn't find an install.zsh file at current path.\nNavigate to where the zshorts repo is cloned before installing!"
+    echo "Couldn't find an install.zsh file at script path.\nThis should not happen!"
 
-# Check if install.zsh at current path is correct
+# Check if install.zsh at script path is correct
 elif ! grep -q $REPO_REMOTE $REPO_LOCAL_INSTALL
 then
-    echo "Found an install.zsh file, but not the right one.\nNavigate to where the zshorts repo is cloned before installing!"
+    echo "Found an install.zsh file, but not the right one.\nMake sure you're running the correct install.zsh!"
 
 # Check if zshorts is already installed
 elif grep -q $SRC_LOCAL_INDEX $ZSH
@@ -28,12 +31,9 @@ else
     echo -e "# $REPO_REMOTE\n$SRC_LOCAL_INDEX\n\n$(cat $ZSH)" > $ZSH
     echo "Source path to zshorts added!"
 
-    # Add ZSHORTS absolute path to index.zsh
-    echo -e "# Path to this clone added as part of installation\n$DEFINE_REPO_LOCAL_PATH\n\n$(cat $REPO_LOCAL_INDEX)" > $REPO_LOCAL_INDEX
-
     # Apply zshorts aliases etc.
-    if [[ -f "${0:A:h}/index.zsh" ]]; then
-      source "${0:A:h}/index.zsh"
+    if [[ -f "${SCRIPT_DIR}/index.zsh" ]]; then
+      source "${SCRIPT_DIR}/index.zsh"
     fi
 
     echo "Zshorts installed!"

@@ -1,6 +1,3 @@
-# Path to this clone added as part of installation
-REPO_LOCAL_PATH=$HOME/Config/zshorts
-
 # Source constants if file exists
 if [[ -f "${0:A:h}/constants.zsh" ]]; then
   source "${0:A:h}/constants.zsh"
