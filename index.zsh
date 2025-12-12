@@ -1,11 +1,15 @@
 # Path to this clone added as part of installation
 REPO_LOCAL_PATH=$HOME/Config/zshorts
 
-# REPO_LOCAL_PATH constant defined as part of installation
-source $REPO_LOCAL_PATH/constants.zsh
+# Source constants if file exists
+if [[ -f "${0:A:h}/constants.zsh" ]]; then
+  source "${0:A:h}/constants.zsh"
+fi
 
 # Apply zshorts aliases etc.
-for zshort in $REPO_LOCAL_PATH/zshorts/*.zsh
+for zshort in ${0:A:h}/zshorts/*.zsh
 do
-  source $zshort
+  if [[ -f "$zshort" ]]; then
+    source "$zshort"
+  fi
 done

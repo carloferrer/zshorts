@@ -1,6 +1,8 @@
 # https://github.com/carloferrer/zshorts
 
-source ./constants.zsh
+if [[ -f "${0:A:h}/constants.zsh" ]]; then
+  source "${0:A:h}/constants.zsh"
+fi
 
 # Print empty line for aesthetics
 echo ""
@@ -30,7 +32,9 @@ else
     echo -e "# Path to this clone added as part of installation\n$DEFINE_REPO_LOCAL_PATH\n\n$(cat $REPO_LOCAL_INDEX)" > $REPO_LOCAL_INDEX
 
     # Apply zshorts aliases etc.
-    source ./index.zsh
+    if [[ -f "${0:A:h}/index.zsh" ]]; then
+      source "${0:A:h}/index.zsh"
+    fi
 
     echo "Zshorts installed!"
 fi
