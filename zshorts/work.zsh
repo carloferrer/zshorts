@@ -6,4 +6,4 @@ alias c="cd ~/Code"
 
 # Requires bun
 alias brd="bun run dev"
-alias brt="bun run test"
+brt() { (cd client && bun run test "$@"); } # Run from hb1 root
