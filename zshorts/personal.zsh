@@ -22,11 +22,14 @@ alias g2='git grep -B 2'
 alias ggrc='git grep -C'
 alias gl='git pull'
 alias glo='git log -U0'
+
 alias gp='git push'
 alias gpsup='git push --set-upstream origin $(git_branch)'
 alias gst='git status'
 
 # Dangerous git stuff
+alias gane!='git commit --am --no-e'
+alias gcam!='git commit --am'
 alias gcan!='git commit -a --no-edit --amend'
 alias gpf!='git push --force-with-lease'
 
