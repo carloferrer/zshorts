@@ -36,7 +36,3 @@ alias l='ls -a'
 git_branch() {
   echo "$(command git symbolic-ref --short -q HEAD)"
 }
-
-# Python stuff
-alias pm='python manage.py'
-alias seba='source env/bin/activate'

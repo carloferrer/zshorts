@@ -2,7 +2,8 @@
 alias jdp="jq .dependencies package.json"
 alias jsp="jq .scripts package.json"
 
-alias c="cd ~/Code"
+alias c='claude'
+alias cu!='brew upgrade claude-code'
 
 # Requires bun
 alias brd="bun run dev"
